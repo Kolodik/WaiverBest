@@ -1,0 +1,46 @@
+---
+const features = [
+  {
+    title: "Sign on any device",
+    desc: "Customers sign on their own phone, a front-desk tablet, or a kiosk — no app to install.",
+    color: "bg-brand-500",
+  },
+  {
+    title: "Built to hold up legally",
+    desc: "Time-stamped, IP-logged signatures with an audit trail you can hand to your insurer or attorney.",
+    color: "bg-accent-500",
+  },
+  {
+    title: "Searchable waiver vault",
+    desc: "Find any signed waiver in seconds by name, date, or event — no filing cabinets required.",
+    color: "bg-teal-500",
+  },
+  {
+    title: "Works with your tools",
+    desc: "Sync signed waivers to the booking, CRM, and email platforms you already use.",
+    color: "bg-plum-600",
+  },
+];
+---
+
+<section id="features" class="bg-white py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Everything you need, nothing you don't</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        WaiverBest is built for one job: getting a signed, defensible waiver from every
+        customer, every time — without slowing down your front desk.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {features.map((f) => (
+        <div class="rounded-2xl border border-slate-100 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <div class={`flex h-11 w-11 items-center justify-center rounded-xl ${f.color} text-white font-bold`}>✓</div>
+          <h3 class="mt-5 text-lg font-bold text-slate-900">{f.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

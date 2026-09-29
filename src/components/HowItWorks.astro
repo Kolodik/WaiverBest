@@ -1,0 +1,38 @@
+---
+const steps = [
+  {
+    n: "01",
+    title: "Build your waiver",
+    desc: "Start from a template or drop in your own wording — add custom fields in minutes.",
+  },
+  {
+    n: "02",
+    title: "Send or scan",
+    desc: "Text or email a signing link ahead of time, or hand over a tablet at check-in.",
+  },
+  {
+    n: "03",
+    title: "It's signed, stored, searchable",
+    desc: "Every signature lands in your vault instantly, tagged and ready to retrieve on demand.",
+  },
+];
+---
+
+<section id="how-it-works" class="bg-teal-500 py-20 text-white">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-extrabold sm:text-4xl">From blank form to signed waiver in three steps</h2>
+      <p class="mt-4 text-lg text-teal-50">No IT project. No training manual. Most teams are live the same afternoon.</p>
+    </div>
+
+    <div class="mt-14 grid gap-8 md:grid-cols-3">
+      {steps.map((s) => (
+        <div class="rounded-2xl bg-white/10 p-8 backdrop-blur">
+          <span class="text-sm font-bold text-accent-300">{s.n}</span>
+          <h3 class="mt-3 text-xl font-bold">{s.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-teal-50">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

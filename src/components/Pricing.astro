@@ -1,0 +1,67 @@
+---
+const tiers = [
+  {
+    name: "Starter",
+    price: "$29",
+    cadence: "/month",
+    desc: "For single-location businesses just getting off paper.",
+    features: ["1 location", "Unlimited signed waivers", "Email delivery", "12-month waiver storage"],
+    featured: false,
+  },
+  {
+    name: "Growth",
+    price: "$79",
+    cadence: "/month",
+    desc: "For multi-location teams that need reporting and integrations.",
+    features: ["Up to 5 locations", "Unlimited signed waivers", "CRM & booking integrations", "Unlimited waiver storage", "Team roles & permissions"],
+    featured: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    cadence: "",
+    desc: "For franchises and organizations with compliance requirements.",
+    features: ["Unlimited locations", "SSO & advanced audit logs", "Dedicated support", "Custom retention policy"],
+    featured: false,
+  },
+];
+---
+
+<section id="pricing" class="bg-brand-50 py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Simple pricing, no per-signature fees</h2>
+      <p class="mt-4 text-lg text-slate-600">Every plan includes unlimited signed waivers. Pick the plan that matches how many locations you run.</p>
+    </div>
+
+    <div class="mt-14 grid gap-8 lg:grid-cols-3">
+      {tiers.map((t) => (
+        <div class={`flex flex-col rounded-2xl border p-8 ${t.featured ? "border-accent-400 bg-white shadow-xl scale-[1.02]" : "border-slate-200 bg-white shadow-sm"}`}>
+          {t.featured && (
+            <span class="mb-4 inline-block w-fit rounded-full bg-accent-500 px-3 py-1 text-xs font-bold text-white">Most popular</span>
+          )}
+          <h3 class="text-xl font-bold text-slate-900">{t.name}</h3>
+          <p class="mt-2 text-sm text-slate-600">{t.desc}</p>
+          <p class="mt-6">
+            <span class="text-4xl font-extrabold text-slate-900">{t.price}</span>
+            <span class="text-sm font-medium text-slate-500">{t.cadence}</span>
+          </p>
+          <ul class="mt-6 flex-1 space-y-3">
+            {t.features.map((f) => (
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <span class="mt-0.5 text-brand-500">✓</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#"
+            class={`mt-8 rounded-full px-6 py-3 text-center text-sm font-bold transition ${t.featured ? "bg-accent-500 text-white hover:bg-accent-600" : "bg-brand-500 text-white hover:bg-brand-600"}`}
+          >
+            {t.name === "Enterprise" ? "Talk to sales" : "Start free trial"}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

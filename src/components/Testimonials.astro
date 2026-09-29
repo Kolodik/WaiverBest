@@ -1,0 +1,31 @@
+---
+const quotes = [
+  {
+    quote: "We went from a filing cabinet full of paper to a five-second search. Our insurer loves the audit trail.",
+    name: "Owner, indoor climbing gym",
+  },
+  {
+    quote: "Front desk check-in used to be a bottleneck. Now guests sign before they even arrive.",
+    name: "Ops manager, adventure park",
+  },
+  {
+    quote: "Switching took one afternoon. Support answered every question we had within minutes.",
+    name: "Studio director, trampoline park",
+  },
+];
+---
+
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">Teams who ditched paper waivers</h2>
+
+    <div class="mt-14 grid gap-8 md:grid-cols-3">
+      {quotes.map((q) => (
+        <figure class="rounded-2xl border border-slate-100 bg-brand-50/40 p-8">
+          <blockquote class="text-slate-700">&ldquo;{q.quote}&rdquo;</blockquote>
+          <figcaption class="mt-6 text-sm font-semibold text-brand-700">{q.name}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
